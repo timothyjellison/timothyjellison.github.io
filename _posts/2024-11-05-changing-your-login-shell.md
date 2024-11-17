@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: home
 title: Changing your login shell
 subtitle: Digging into the chsh command
 tags:
