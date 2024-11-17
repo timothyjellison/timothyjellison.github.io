@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-11-16T21:03:06-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Timothy J. Ellison</title><subtitle>Software engineer with nearly a decade of experience building web UIs</subtitle><entry><title type="html">Changing your login shell</title><link href="http://localhost:4000/2024/11/05/changing-your-login-shell.html" rel="alternate" type="text/html" title="Changing your login shell" /><published>2024-11-05T00:00:00-08:00</published><updated>2024-11-05T00:00:00-08:00</updated><id>http://localhost:4000/2024/11/05/changing-your-login-shell</id><content type="html" xml:base="http://localhost:4000/2024/11/05/changing-your-login-shell.html"><![CDATA[<p>If you’re using Mac, Linux, or Windows with the Windows Subsystems for Linux installed, you can use <code class="language-plaintext highlighter-rouge">chsh</code> to <code class="language-plaintext highlighter-rouge">ch</code>ange your <code class="language-plaintext highlighter-rouge">sh</code>ell.</p>
+
+<h2 id="whats-a-shell">What’s a shell?</h2>
+
+<p>The shell is the outermost layer around an operating system. In other words, the shell is an operating system’s user interface. But while a graphical user interface (GUI) is technically a shell, usually when people say shell they’re referring to a command line interface.</p>
+
+<h2 id="whats-a-login-shell">What’s a login shell?</h2>
+
+<p>The login shell is the shell that starts whenever you begin a new terminal session. That shell can open any other shell as a child, but those children aren’t the login shell.</p>
+
+<h2 id="why-would-you-want-to-change-your-login-shell">Why would you want to change your login shell?</h2>
+
+<h3 id="the-flip-answer-because-its-there">The Flip Answer: Because It’s There</h3>
+
+<p>Your computer can do millions of interesting things and this is one of those things. So why wouldn’t you want to do it? Experiment. Learn. Enjoy.</p>
+
+<h3 id="the-legit-answer-because-things-change">The Legit Answer: Because Things Change</h3>
+
+<p>For myself, I moved from bash to zsh because I upgraded my macOS to a version that prefers zsh. If I were to make a career shift and start programming primarily in C, I might start using csh. Hardware changes. Software changes. Your needs change. Keeping up might mean changing your shell.</p>
+
+<h2 id="how-do-i-even-know-what-shells-i-can-use">How do I even know what shells I can use?</h2>
+
+<p>From your root directory, use <code class="language-plaintext highlighter-rouge">cat</code> to list the shells you have available.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>etc/shells
+</code></pre></div></div>
+
+<p>On my machine this returns a list:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash
+/bin/csh
+/bin/dash
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+</code></pre></div></div>
+
+<h2 id="why-do-all-of-these-end-in-sh">Why do all of these end in sh?</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">sh</code> stands for shell. Googling any one of these shells will take you down a rabbit hole of computer history at MIT, Bell Labs, and other centers of early computing. It’s good reading.</p>
+
+<h2 id="how-do-i-change-to-one-of-these-shells">How do I change to one of these shells?</h2>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">chsh</code> command. The <code class="language-plaintext highlighter-rouge">-s</code> flag tells <code class="language-plaintext highlighter-rouge">chsh</code> that you’re passing the name of the shell you want to change to.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chsh <span class="nt">-s</span> /bin/zsh
+</code></pre></div></div>
+
+<p>You’ll be prompted for your password. Once the change is made go ahead and quit and restart your terminal application.</p>
+
+<h2 id="how-can-i-check-what-shell-im-using-now">How can I check what shell I’m using now?</h2>
+
+<p>Your shell’s name is stored in the SHELL environment variable. To see it just run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$SHELL</span>
+</code></pre></div></div>
+
+<h2 id="i-just-changed-my-shell-but-echo-shell-still-lists-my-old-shell--whats-going-on">I just changed my shell but <code class="language-plaintext highlighter-rouge">echo $SHELL</code> still lists my old shell — what’s going on?</h2>
+
+<p>You need to restart your terminal session. Remember that you’ve just changed your login shell, so you won’t see the effect until you close out of your terminal and log in again.</p>]]></content><author><name></name></author><category term="command line" /><summary type="html"><![CDATA[If you’re using Mac, Linux, or Windows with the Windows Subsystems for Linux installed, you can use chsh to change your shell.]]></summary></entry></feed>
