@@ -3,7 +3,7 @@ layout: home
 title: Changing your login shell
 subtitle: Digging into the chsh command
 tags:
-  - command line
+  - commandline
 ---
 
 If you're using Mac, Linux, or Windows with the Windows Subsystems for Linux installed, you can use `chsh` to `ch`ange your `sh`ell.
