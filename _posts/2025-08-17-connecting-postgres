@@ -1,0 +1,32 @@
+---
+layout: home
+title: Setting Up a Postgres DB with Docker, PG Admin, and Prisma
+subtitle: Why do it this way? Why not?
+tags:
+  - databases
+---
+
+# Docker
+
+I wanted a low-effort DB just for learning purposes, so I decided to use the publicly available [postgres docker image](https://hub.docker.com/_/postgres). When starting up the container I passed a few common flags:
+
+```bash
+docker run --name xyz -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
+```
+`run` will start up a container. The `postgres` at the end is the name of the image you want to run in the container.
+`--name` gives your container a name of your choice.
+`-e` is an environment variable that will be available inside your container
+`-d` is detached mode, meaning the container won't take of your terminal session once it starts up.
+`-p` maps the host port to one of your container's ports for easy access. You'll use this when connecting PG Admin and Prisma later.
+
+# PG Admin
+
+I wanted a SQL client to explore my database and execute SQL queries easily. At work we use Datagrip so just out of curiosity I wanted to try something else. Some quick Googlin revealed [PG Admin](https://www.pgadmin.org/) is a good option. Since I mapped my docker port above it was crazy easy to set up a connection to the database in my postgres container.
+
+From there I could easily create a new table and some test data.
+
+# Prisma
+
+I wanted a way to use my new database programatically, so to keep the barrier to entry as low as possible I decided to write a simple Node app. I'd heard of Prisma as an ORM with good TypeScript support so I chose that. Their homepage is pretty aggressive about selling you services but you can bring your own DB.
+
+[Just follow this guide.](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases/connect-your-database-typescript-postgresql) Once you pass it your DB connection details, Prisma can introspect your DB's schema and generate a typed client library for you.
