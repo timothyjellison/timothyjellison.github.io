@@ -27,6 +27,6 @@ From there I could easily create a new table and some test data.
 
 # Prisma
 
-I wanted a way to use my new database programatically, so to keep the barrier to entry as low as possible I decided to write a simple Node app. I'd heard of Prisma as an ORM with good TypeScript support so I chose that. Their homepage is pretty aggressive about selling you services but you can bring your own DB.
+I wanted a way to use my new database programatically, so to keep the barrier to entry as low as possible I decided to write a simple Node app. I'd heard of [Prisma](https://www.prisma.io/) as an ORM with good TypeScript support so I chose that. Their homepage is pretty aggressive about selling you services but you can bring your own DB.
 
 [Just follow this guide.](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases/connect-your-database-typescript-postgresql) Once you pass it your DB connection details, Prisma can introspect your DB's schema and generate a typed client library for you.
