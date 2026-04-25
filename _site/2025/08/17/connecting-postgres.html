@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Setting Up a Postgres DB with Docker, PG Admin, and Prisma | Timothy J. Ellison</title>
+<title>Setting Up a Postgres Database with Docker, PG Admin, and Prisma | Timothy J. Ellison</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Setting Up a Postgres DB with Docker, PG Admin, and Prisma" />
+<meta property="og:title" content="Setting Up a Postgres Database with Docker, PG Admin, and Prisma" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Docker" />
 <meta property="og:description" content="Docker" />
@@ -15,9 +15,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-08-17T00:00:00-07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Setting Up a Postgres DB with Docker, PG Admin, and Prisma" />
+<meta property="twitter:title" content="Setting Up a Postgres Database with Docker, PG Admin, and Prisma" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-17T00:00:00-07:00","datePublished":"2025-08-17T00:00:00-07:00","description":"Docker","headline":"Setting Up a Postgres DB with Docker, PG Admin, and Prisma","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/08/17/connecting-postgres.html"},"url":"http://localhost:4000/2025/08/17/connecting-postgres.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-17T00:00:00-07:00","datePublished":"2025-08-17T00:00:00-07:00","description":"Docker","headline":"Setting Up a Postgres Database with Docker, PG Admin, and Prisma","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/08/17/connecting-postgres.html"},"url":"http://localhost:4000/2025/08/17/connecting-postgres.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Timothy J. Ellison" /></head>
 <body><header class="site-header" role="banner">
@@ -37,17 +37,19 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h1 class="page-heading">Setting Up a Postgres DB with Docker, PG Admin, and Prisma</h1><h1 id="docker">Docker</h1>
+        <div class="home"><h1 class="page-heading">Setting Up a Postgres Database with Docker, PG Admin, and Prisma</h1><h1 id="docker">Docker</h1>
 
 <p>I wanted a low-effort DB just for learning purposes, so I decided to use the publicly available <a href="https://hub.docker.com/_/postgres">postgres docker image</a>. When starting up the container I passed a few common flags:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--name</span> xyz <span class="nt">-e</span> <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>password <span class="nt">-d</span> <span class="nt">-p</span> 5432:5432 postgres
 </code></pre></div></div>
-<p><code class="language-plaintext highlighter-rouge">run</code> will start up a container. The <code class="language-plaintext highlighter-rouge">postgres</code> at the end is the name of the image you want to run in the container.
-<code class="language-plaintext highlighter-rouge">--name</code> gives your container a name of your choice.
-<code class="language-plaintext highlighter-rouge">-e</code> is an environment variable that will be available inside your container
-<code class="language-plaintext highlighter-rouge">-d</code> is detached mode, meaning the container won’t take of your terminal session once it starts up.
-<code class="language-plaintext highlighter-rouge">-p</code> maps the host port to one of your container’s ports for easy access. You’ll use this when connecting PG Admin and Prisma later.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">run</code> will start up a container. The <code class="language-plaintext highlighter-rouge">postgres</code> at the end is the name of the image you want to run in the container.</li>
+  <li><code class="language-plaintext highlighter-rouge">--name</code> gives your container a name of your choice.</li>
+  <li><code class="language-plaintext highlighter-rouge">-e</code> is an environment variable that will be available inside your container.</li>
+  <li><code class="language-plaintext highlighter-rouge">-d</code> is detached mode, meaning the container won’t take over your terminal session once it starts up.</li>
+  <li><code class="language-plaintext highlighter-rouge">-p</code> maps the host port to one of your container’s ports for easy access. You’ll use this when connecting PG Admin and Prisma later.</li>
+</ul>
 
 <h1 id="pg-admin">PG Admin</h1>
 
@@ -64,7 +66,7 @@
     <ul class="post-list"><li><span class="post-meta">Aug 17, 2025</span>
         <h3>
           <a class="post-link" href="/2025/08/17/connecting-postgres.html">
-            Setting Up a Postgres DB with Docker, PG Admin, and Prisma
+            Setting Up a Postgres Database with Docker, PG Admin, and Prisma
           </a>
         </h3></li><li><span class="post-meta">Nov 5, 2024</span>
         <h3>
@@ -93,7 +95,7 @@
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>Software engineer with nearly a decade of experience building web UIs</p>
+        <p>Software engineer with 10+ years of experience building web UIs</p>
       </div>
     </div>
 

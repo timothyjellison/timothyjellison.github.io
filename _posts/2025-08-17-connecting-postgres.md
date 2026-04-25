@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Setting Up a Postgres DB with Docker, PG Admin, and Prisma
+title: Setting Up a Postgres Database with Docker, PG Admin, and Prisma
 subtitle: Why do it this way? Why not?
 tags:
   - databases
@@ -13,11 +13,11 @@ I wanted a low-effort DB just for learning purposes, so I decided to use the pub
 ```bash
 docker run --name xyz -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
 ```
-`run` will start up a container. The `postgres` at the end is the name of the image you want to run in the container.
-`--name` gives your container a name of your choice.
-`-e` is an environment variable that will be available inside your container
-`-d` is detached mode, meaning the container won't take of your terminal session once it starts up.
-`-p` maps the host port to one of your container's ports for easy access. You'll use this when connecting PG Admin and Prisma later.
+- `run` will start up a container. The `postgres` at the end is the name of the image you want to run in the container.
+- `--name` gives your container a name of your choice.
+- `-e` is an environment variable that will be available inside your container.
+- `-d` is detached mode, meaning the container won't take over your terminal session once it starts up.
+- `-p` maps the host port to one of your container's ports for easy access. You'll use this when connecting PG Admin and Prisma later.
 
 # PG Admin
 
