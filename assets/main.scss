@@ -30,6 +30,10 @@ a {
     color: var(--text-color-link);
 }
 
+strong, em {
+  color: var(--text-color-pop);
+}
+
 a:visited,
 a:hover {
     color: var(--text-color-link-visited);
