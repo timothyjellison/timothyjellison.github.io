@@ -39,6 +39,7 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
+  - AGENTS.md
   - README.md
   - start.sh
 #   - .sass-cache/
